@@ -7,11 +7,7 @@ import (
 )
 
 func init() {
-
-}
-
-func adminCmd() *cobra.Command {
-	return &cobra.Command{
+	adminCmd := &cobra.Command{
 		Use:   "startAdmin",
 		Short: "Start Admin Server",
 		Run: func(cmd *cobra.Command, args []string) {
@@ -19,6 +15,7 @@ func adminCmd() *cobra.Command {
 			startAdmin()
 		},
 	}
+	rootCmd.AddCommand(adminCmd)
 }
 
 func startAdmin() {

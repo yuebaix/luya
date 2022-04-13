@@ -6,11 +6,7 @@ import (
 )
 
 func init() {
-
-}
-
-func imCmd() *cobra.Command {
-	return &cobra.Command{
+	imCmd := &cobra.Command{
 		Use:   "startIm",
 		Short: "Start Im Server",
 		Run: func(cmd *cobra.Command, args []string) {
@@ -18,6 +14,7 @@ func imCmd() *cobra.Command {
 			StartImWorker()
 		},
 	}
+	rootCmd.AddCommand(imCmd)
 }
 
 func StartImGateway() {
