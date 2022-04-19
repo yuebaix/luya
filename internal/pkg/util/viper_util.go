@@ -3,7 +3,6 @@ package util
 import (
 	"fmt"
 	"github.com/fsnotify/fsnotify"
-	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 )
 
@@ -33,12 +32,12 @@ func LoadConfig(configFileName string) *viper.Viper {
 	})
 	viperInstance.WatchConfig()
 
-	v := viperInstance.Get("port")
+	/*v := viperInstance.Get("port")
 	fmt.Println(v)
 
 	if homePath, err := homedir.Dir(); err == nil {
 		fmt.Printf("homedir is %s\n", homePath)
-	}
+	}*/
 
 	return viperInstance
 }
