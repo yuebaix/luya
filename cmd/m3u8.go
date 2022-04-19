@@ -21,7 +21,8 @@ func init() {
 	}
 	rootCmd.AddCommand(m3u8Cmd)
 
-	m3u8Cmd.Flags().StringVar(&m3u8Option.Url, "url", "", "")
+	m3u8Cmd.Flags().StringVar(&m3u8Option.Url, "url", "", "Url for searching m3u8 link")
+	m3u8Cmd.MarkFlagRequired("url")
 }
 
 func FindM3u8() {
